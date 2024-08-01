@@ -1,11 +1,18 @@
 //login button event handler
 const loginButton = document.getElementById("loginButton");
 loginButton?.addEventListener("click", function () {
-  const allContent = document.getElementById("allContent");
-  allContent.style.display = "none";
+  const userEmail = document.getElementById("email").value;
+  const userPassword = document.getElementById("password").value;
+  const errorMessage = document.getElementById("errorMessage");
 
-  const bankDetails = document.getElementById("bankDetails");
-  bankDetails.style.display = "block";
+  if (userEmail == "" || userPassword == "") {
+    errorMessage.style.display = "block";
+  } else {
+    const allContent = document.getElementById("allContent");
+    allContent.style.display = "none";
+    const bankDetails = document.getElementById("bankDetails");
+    bankDetails.style.display = "block";
+  }
 });
 
 //deposit button event handler
@@ -26,6 +33,7 @@ withdrawButton?.addEventListener("click", function () {
 
   updateSpanText("currentWithdraw", withdrawNumber);
   updateSpanText("currentBalance", -1 * withdrawNumber);
+
   document.getElementById("withdrawAmount").value = "";
 });
 

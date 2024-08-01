@@ -44,3 +44,9 @@
      padding: 30px 30px;
      border-radius: 5px;
 }
+
+.message {
+     display: none;
+     font-weight: 600;
+     color: red;
+}
